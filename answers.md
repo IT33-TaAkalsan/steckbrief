@@ -1,23 +1,27 @@
-# Antworten
+# Antworten zu den Kontrollfragen
 
-1) **Working Directory / Staging / Repository**
-- Working Directory: Deine echten Dateien im Projektordner.
-- Staging Area (Index): Zwischenbereich – was im nächsten Commit landet.
-- Repository: Die Historie der Commits im `.git`-Ordner.
+1. **Unterschied Working Directory, Staging Area und Repository**
+   - **Working Directory**: Dein Projektordner, in dem du Dateien bearbeitest.
+   - **Staging Area (Index)**: Zwischenspeicher; hier legst du fest, welche Änderungen in den nächsten Commit aufgenommen werden.
+   - **Repository**: Die Git-Datenbank im `.git`-Ordner, wo alle Commits und Versionen gespeichert sind.
 
-2) **Fast-Forward erkennen**
-- `git merge --ff-only` läuft ohne Merge-Commit.
-- `git log --oneline --graph` zeigt keinen Merge-Knoten; `main`-Zeiger rückt nur vor.
+2. **Woran erkennst du, ob ein Merge Fast-Forward war?**
+   - Kein eigener Merge-Commit wird erstellt.
+   - Der Branch-Zeiger springt nur nach vorne.
+   - Im Log (`git log --oneline --graph`) sieht man eine gerade Linie ohne Verzweigung.
 
-3) **Warum kann `--ff-only` fehlschlagen?**
-- Wenn `main` seit dem Abzweigen eigene Commits hat → kein gerades Vorspulen mehr möglich.
+3. **Warum kann `git merge --ff-only` fehlschlagen?**
+   - Wenn der Zielbranch (`main`) seit dem Abzweigen eigene Commits bekommen hat.
 
-4) **Vorteil von `dev`**
-- Saubere Trennung von Arbeit und stabilem `main`, leichteres Review, weniger Risiko.
+4. **Vorteil, Änderungen zuerst auf `dev` zu machen**
+   - `main` bleibt stabil und sauber.
+   - Experimente und neue Features können in `dev` getestet werden.
+   - Bessere Nachvollziehbarkeit der Änderungen.
 
-5) **Aktuellen Branch anzeigen**
-- `git branch --show-current` (oder `git status`).
+5. **Befehl, um aktuellen Branch zu sehen**
+   - `git branch --show-current`
+   - oder `git status` (zeigt Branch oben an).
 
-6) **Änderungen sichtbar & dauerhaft machen**
-- Staging: `git add <datei>` (oder `git add .`)
-- Commit: `git commit -m "Nachricht"`
+6. **Befehle für Staging & Commit**
+   - Staging: `git add <datei>` oder `git add .`
+   - Commit: `git commit -m "Beschreibung"`
